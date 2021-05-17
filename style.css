@@ -1,0 +1,52 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+}
+:root
+{
+    --primary-color:#734b6d;
+    --secondary-color: #734b6d
+
+}
+body
+{
+    font-family: "poppins", sans-serif;
+    background: linear-gradient(180deg,#42275a , #734b6d);
+    min-height: 100vh;
+    
+}
+header
+{
+    color: beige;
+}
+header, form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    min-height: 15vh;
+}
+form input, form button
+{
+    border: none;
+    font-size: 1.4rem;
+    background: white;
+    padding: 0.3rem;
+
+}
+
+form button
+{
+    background:wheat;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover
+{
+    background:var(--secondary-color);
+    color: wheat;
+}
