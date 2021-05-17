@@ -1,9 +1,11 @@
+//selectors
 const input=  document.querySelector(".todo-input");
 const button= document.querySelector(".todo-button");
 const TodoList=document.querySelector(".todo-list")
 
+//eventlisteners
 button.addEventListener("click",addtodo);
-
+//functions
 function addtodo(event)
 {
     event.preventDefault();
@@ -12,7 +14,7 @@ function addtodo(event)
 
     const todoitem=document.createElement("li");
     todoitem.classList.add("todoitem");
-    todoitem.innerText="item 1";
+    todoitem.innerText=input.value;
     tododiv.appendChild(todoitem);
     
     const buttondone=document.createElement("button");
@@ -26,5 +28,7 @@ function addtodo(event)
     buttontrash.innerHTML='<i class="fas fa-trash"></i>';
     tododiv.appendChild(buttontrash);
     TodoList.appendChild(tododiv);
+
+    input.value=""
 
 }
