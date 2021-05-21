@@ -13,10 +13,8 @@ body {
     font-family: "poppins", sans-serif;
     background: linear-gradient(180deg, #42275a, #734b6d);
     min-height: 150vh;
-    box-sizing: border-box;
-    overflow: hidden;
     padding: 1rem;
-
+    box-sizing: border-box;
 }
 
 header {
