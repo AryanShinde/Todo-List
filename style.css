@@ -34,7 +34,7 @@ form {
 form input,
 form button {
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     background: white;
     padding: 0.3rem;
     outline: none;
@@ -173,4 +173,23 @@ select {
     background: white;
     color: var(--secondary-color);
     transition: all 0.3s ease;
+}
+
+@media only screen and (max-width:700px)
+{
+    form input{
+        font-size: 1.2rem;
+        width: 140px;
+    }
+    form button{
+        font-size: 1.2rem;
+    }
+    select
+    {
+        width:130px;
+        padding:0.5rem;
+    }
+    form{
+        margin-right:-10px;
+    }
 }

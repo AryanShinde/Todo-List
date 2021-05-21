@@ -48,7 +48,7 @@ function addtodo(event) {
 function deleteitem(event) {
 
     const item = event.target;
-    if (item.classList[0] === "button-trash") {
+    if (item.classList.contains("button-trash")) {
         const todo = item.parentElement;
         item.parentElement.classList.add("fall");
 
