@@ -1,8 +1,11 @@
-//selectors
+//selector
+const username=prompt("what is your name: ")
 const input = document.querySelector(".todo-input");
 const button = document.querySelector(".todo-button");
 const TodoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
+const user= document.querySelector("#name")
+user.innerText=username;
 let todotemp = [];
 //eventlisteners
 document.addEventListener("DOMContentLoaded", updateUi);
