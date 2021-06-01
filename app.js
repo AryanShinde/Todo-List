@@ -120,7 +120,7 @@ function filterDisplay(event) {
 
         }
         if (event.target.value === "uncompleted") {
-            if (item.classList.contains("uncompleted")) {
+            if (!item.classList.contains("completed")) {
                 item.style.display = "flex";
                 
             } else {
