@@ -1,11 +1,11 @@
 //selector
-const username=prompt("what is your name: ")
+const username = prompt("what is your name: ")
 const input = document.querySelector(".todo-input");
 const button = document.querySelector(".todo-button");
 const TodoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
-const user= document.querySelector("#name")
-user.innerText=username;
+const user = document.querySelector("#name")
+user.innerText = username;
 let todotemp = [];
 //eventlisteners
 document.addEventListener("DOMContentLoaded", updateUi);
@@ -78,61 +78,86 @@ function deleteitem(event) {
 }
 
 
+function filterDisplay(event) {
+    console.log(event.target.value);
+    var todos = TodoList.children;
+    console.log(todos);
+    for (item of todos) {
+        // switch (event.target.value) {
+        //     case "all":
+        //         item.style.display = "flex";
+        //         break;
+        //     case "completed":
+
+        //         if (item.classlist[0] === "completed") {
+        //             item.style.display = "flex";
+        //         } else {
+        //             item.className = "none";
+        //         }
+        //         break;
+        //     case "uncompleted":
+        //         if (!item.className[0] === "completed") {
+        //             item.style.display = "flex";
+        //         } else {
+        //             item.className = "";
+        //         }
+        // }
+
+
+        if (event.target.value === "all") {
+            item.style.display = "flex";
+
+        }
+        if (event.target.value === "completed") {
+            if (item.classList.contains("completed")) {
+                item.style.display = "flex";
+            
+            } else {
+                item.style.display = "none";
+                
+
+            }
+
+        }
+        if (event.target.value === "uncompleted") {
+            if (item.classList.contains("uncompleted")) {
+                item.style.display = "flex";
+                
+            } else {
+                item.style.display = "none";
+                
+            }
+        }
+    }
+}
+
 // function filterDisplay(event) {
-
+//     console.log(TodoList.children);
 //     const todos = TodoList.children;
-//     console.log(todos)
-//     todotemp.forEach(function (item) {
-
+//     for (item of todos) {
 //         switch (event.target.value) {
 //             case "all":
 //                 item.style.display = "flex";
 //                 break;
 //             case "completed":
-
-//                 if (item.classlist.contains(completed)) {
+//                 console.log(item);
+//                 if (item.classList.contains("completed")) {
 //                     item.style.display = "flex";
 //                 } else {
-//                     item.className = "none";
+//                     item.style.display = "none";
 //                 }
 //                 break;
 //             case "uncompleted":
-//                 if (!item.className.contains(completed)) {
+//                 if (!item.classList.contains("completed")) {
 //                     item.style.display = "flex";
 //                 } else {
-//                     item.className = "";
+//                     item.style.display = "none";
 //                 }
+//                 break;
+
 //         }
-//     });
+//     }
 // }
-
-function filterDisplay(event) {
-    console.log(TodoList.children);
-    const todos = TodoList.children;
-    for (item of todos) {
-        switch (event.target.value) {
-            case "all":
-                item.style.display = "flex";
-                break;
-            case "completed":
-                console.log(item);
-                if (item.classList.contains("completed")) {
-                    item.style.display = "flex";
-                } else {
-                    item.style.display = "none";
-                }
-                break;
-            case "uncompleted":
-                if (!item.classList.contains("completed")) {
-                    item.style.display = "flex";
-                } else {
-                    item.style.display = "none";
-                }
-                break;
-
-        }
-    }
-}
 
 
 function localStoragefun(todo) {
