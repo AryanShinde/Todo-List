@@ -1,17 +1,19 @@
 //selector
-const username = prompt("what is your name: ")
+
 const input = document.querySelector(".todo-input");
 const button = document.querySelector(".todo-button");
 const TodoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 const user = document.querySelector("#name")
-user.innerText = username;
+
 let todotemp = [];
 //eventlisteners
 document.addEventListener("DOMContentLoaded", updateUi);
 button.addEventListener("click", addtodo);
 TodoList.addEventListener("click", deleteitem);
 filterOption.addEventListener("click", filterDisplay);
+
+
 
 
 //functions
@@ -83,25 +85,7 @@ function filterDisplay(event) {
     var todos = TodoList.children;
     console.log(todos);
     for (item of todos) {
-        // switch (event.target.value) {
-        //     case "all":
-        //         item.style.display = "flex";
-        //         break;
-        //     case "completed":
-
-        //         if (item.classlist[0] === "completed") {
-        //             item.style.display = "flex";
-        //         } else {
-        //             item.className = "none";
-        //         }
-        //         break;
-        //     case "uncompleted":
-        //         if (!item.className[0] === "completed") {
-        //             item.style.display = "flex";
-        //         } else {
-        //             item.className = "";
-        //         }
-        // }
+        
 
 
         if (event.target.value === "all") {
@@ -131,33 +115,6 @@ function filterDisplay(event) {
     }
 }
 
-// function filterDisplay(event) {
-//     console.log(TodoList.children);
-//     const todos = TodoList.children;
-//     for (item of todos) {
-//         switch (event.target.value) {
-//             case "all":
-//                 item.style.display = "flex";
-//                 break;
-//             case "completed":
-//                 console.log(item);
-//                 if (item.classList.contains("completed")) {
-//                     item.style.display = "flex";
-//                 } else {
-//                     item.style.display = "none";
-//                 }
-//                 break;
-//             case "uncompleted":
-//                 if (!item.classList.contains("completed")) {
-//                     item.style.display = "flex";
-//                 } else {
-//                     item.style.display = "none";
-//                 }
-//                 break;
-
-//         }
-//     }
-// }
 
 
 function localStoragefun(todo) {
@@ -169,10 +126,21 @@ function localStoragefun(todo) {
     }
     todos.push(todo);
     localStorage.setItem("todos", JSON.stringify(todos));
+    
 }
 
 function updateUi(todo) {
     let todos;
+
+    if(localStorage.getItem("username")==null)
+    {
+        const username = prompt("what is your name: ")
+        localStorage.setItem("username",username);
+        user.innerText = username;
+    }
+    else{
+        user.innerText=localStorage.getItem("username");
+    }
     if (localStorage.getItem("todos") === null) {
         todos = [];
     } else {
